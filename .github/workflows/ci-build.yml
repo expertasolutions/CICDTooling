@@ -1,4 +1,4 @@
-name: AzureHelmDeployer
+name: AzureHelmDeployer-new
 
 on:
   push:
