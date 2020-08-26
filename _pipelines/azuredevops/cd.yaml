@@ -1,4 +1,4 @@
-name: CD-AzureKubeHelm-v0.$(date:yy)$(DayOfYear)$(rev:.r)
+name: CD-AzureKubeHelmRunner-v0.$(date:yy)$(DayOfYear)$(rev:.r)
 
 trigger:
 - master
@@ -17,7 +17,7 @@ steps:
   displayName: 'Build and Push hub.docker.com'
   inputs:
     containerRegistry: 'docker-lturmel'
-    repository: 'lturmel/PwshCoreAzCli'
+    repository: 'lturmel/AzureKubeHelmRunner'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: |
