@@ -5,7 +5,6 @@ ENV KUBE_LATEST_VERSION="v1.18.6"
 # https://github.com/kubernetes/helm/releases
 ENV HELM_VERSION="v3.3.0"
 
-
 # Prepare AzureCli installation
 RUN apt-get update -y && apt-get install -y \
     --allow-downgrades --allow-remove-essential --allow-change-held-packages \
@@ -33,6 +32,9 @@ RUN curl -LO https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O
 RUN tar -xf helm-v3.3.0-linux-amd64.tar.gz linux-amd64/helm
 RUN chmod +x linux-amd64/helm
 RUN mv linux-amd64/helm /usr/bin
+
+# Install Docker CLI
+RUN apt-get update && apt-get install -y docker.io
 
 #WORKDIR /config
 
