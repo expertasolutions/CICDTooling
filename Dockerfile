@@ -36,6 +36,4 @@ RUN mv linux-amd64/helm /usr/bin
 # Install Docker CLI
 RUN apt-get update && apt-get install -y docker.io
 
-#WORKDIR /config
-
 CMD bash
